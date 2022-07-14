@@ -18,7 +18,9 @@
                 {{this.word}}
             </th>
 
-            <td class="links"><a href="/">Delete</a></td>
+            <td class="links"><form method="POST" action="/deleted/{{this.id}}?_method=DELETE">  <button type="submit" class="btn">Usun</button> </form></td>
+
+
             <td class="links"><form method="GET" action="/form/add">
                 <button type="submit" class="btn btn-outline-success btn-lg large-button" >Add word</button>
             </form></td>

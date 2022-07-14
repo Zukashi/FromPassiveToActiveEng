@@ -22,6 +22,9 @@ homeRouter.get('/', async (req, res) => {
     res.render('home/added', {
       id,
     });
+  }).delete('/deleted/:id', (req, res) => {
+    db.delete(req.params.id);
+    res.render('home/deleted');
   });
 
 module.exports = {

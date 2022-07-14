@@ -43,6 +43,15 @@ class Db {
     return result;
   }
 
+  getAll() { // pobierz całą listę
+    return this._data;
+  }
+
+  delete(id) {
+    this._data = this._data.filter((oneObj) => oneObj.id !== id);
+    this._save(); // debounce
+  }
+
   getOne(id) {
     return this._data.find((oneObj) => oneObj.id === id); // zwróć obiekt , który będzie miał id takie jak szukamy
   }
