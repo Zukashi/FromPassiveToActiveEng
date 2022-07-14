@@ -1,7 +1,6 @@
 const { writeFile, readFile } = require('fs').promises;
 const { join } = require('path');
 const { v4: uuid } = require('uuid');
-const { countIds } = require('./counter');
 
 class Db {
   constructor(dbFileName) {

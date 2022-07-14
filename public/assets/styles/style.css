@@ -5,6 +5,7 @@
 }
 body {
     font-family: 'Roboto Mono', monospace;
+    height: 300vh;
 }
 table {
     width: 100vw;
@@ -54,8 +55,12 @@ tr {
     gap: 10px;
     justify-content: flex-end;
 }
-
+.top-form {
+    position: absolute;
+    z-index:15;
+}
 th {
+    z-index: 3;
     text-transform:uppercase;
     font-size: 25px;
     width: 100%;
@@ -65,7 +70,37 @@ th {
 
 
 .serial-container {
-    width: 400px;
+    width: 100%;
     display: flex;
     justify-content: ;
+}
+.top-btn {
+    background-color: #c0c0c0;
+    position:fixed;
+    top:0;
+    padding: 20px;
+    width:100%;
+    width: 60px;
+    height: 50px;
+    border:solid #a0a0ee 2px;
+    background-color: black;
+    color:white;
+    transition: 0.3s;
+    padding: 10px;
+    cursor:pointer;
+    z-index: 1;
+}
+
+.top-btn:hover{
+    background-color: #38d71f;
+    color: #0737b0;
+}
+
+.go-home-container{
+    height: 100vh;
+    width: 100vw;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

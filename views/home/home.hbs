@@ -1,3 +1,8 @@
+
+<form class="top-form" method="GET" action="/form/add">
+    <button  class="top-btn" type="submit">Add word</button>
+</form>
+
 <table>
     <!--            <tr>-->
     <!--                <th>-->
@@ -11,14 +16,12 @@
     <tbody>
     {{#each freshDb}}
         <tr>
-
-
             <th>
                 {{this.serial}}
                 {{this.word}}
             </th>
 
-            <td class="links"><form method="POST" action="/deleted/{{this.id}}?_method=DELETE">  <button type="submit" class="btn">Usun</button> </form></td>
+            <td class="links"><form method="POST" action="/deleted/{{this.id}}?_method=DELETE">  <button type="submit" class="btn">Delete</button> </form></td>
 
 
             <td class="links"><form method="GET" action="/form/add">
@@ -34,3 +37,4 @@
 
 
 </table>
+
