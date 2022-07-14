@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Roboto Mono', monospace;
+}
+table {
+    width: 100vw;
+    margin: -2px auto;
+
+}
+
+tbody {
+    background-color: #ce768e;
+
+}
+tr {
+    background-color: yellowgreen;
+    position: relative;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+.container  {
+    display: flex;
+    flex-direction: row;
+    right:150px;
+    gap: 10px;
+
+}
+ td .btn{
+    width: 60px;
+    height: 50px;
+    border:solid #a0a0ee 2px;
+    background-color: black;
+    color:white;
+    transition: 0.3s;
+    padding: 10px;
+     cursor:pointer;
+
+}
+
+.btn:hover{
+    color:black;
+    background-color: white;
+}
+tr {
+    margin:20px 0;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+th {
+    text-transform:uppercase;
+    font-size: 25px;
+    width: 100%;
+    justify-self: flex-start;
+
+}
+
+
+.serial-container {
+    width: 400px;
+    display: flex;
+    justify-content: ;
+}

@@ -1,0 +1,34 @@
+<table>
+    <!--            <tr>-->
+    <!--                <th>-->
+    <!--                    Word-->
+    <!--                </th>-->
+
+    <!--                <td class="links"><a href="">Delete</a></td>-->
+    <!--                <td class="links"> <a href="">Add</a></td>-->
+
+    <!--            </tr>-->
+    <tbody>
+    {{#each freshDb}}
+        <tr>
+
+
+            <th>
+                {{this.serial}}
+                {{this.word}}
+            </th>
+
+            <td class="links"><a href="/">Delete</a></td>
+            <td class="links"><form method="GET" action="/form/add">
+                <button type="submit" class="btn btn-outline-success btn-lg large-button" >Add word</button>
+            </form></td>
+
+        </tr>
+
+    {{/each}}
+
+
+    </tbody>
+
+
+</table>
