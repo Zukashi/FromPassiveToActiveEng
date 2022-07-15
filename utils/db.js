@@ -52,7 +52,6 @@ class Db {
   }
 
   getOne(id) {
-    console.log(id);
     return this._data.find((oneObj) => oneObj.id === id); // zwróć obiekt , który będzie miał id takie jak szukamy
   }
 

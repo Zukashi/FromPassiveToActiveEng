@@ -23,11 +23,6 @@ homeRouter.get('/', async (req, res) => {
 }).put('/:id', (req, res) => {
   const { id } = req.params;
   const update = db.update(req.params.id, req.body);
-  console.log(req.body);
-  console.log(update);
-  if (req.body.sentences !== '') {
-
-  }
   res.render('home/modified.hbs', {
     name: req.body.name,
     update,
@@ -45,10 +40,18 @@ homeRouter.get('/', async (req, res) => {
       id,
     });
   })
-  .post('/added/sentence', (req, res) => {
-    const id = db.addSentence(req.body);
+  .post('/added/sentence/:id', (req, res) => {
+    const obj = db.getOne(req.params.id);
+    obj.sentences.push(req.body.sentences);
+    db._save();
     res.render('home/added/sentence', {
-      id,
+      obj,
+    });
+  })
+  .get('/form/addSentence/:id', (req, res) => {
+    // console.log(db.getOne(req.params.id));
+    res.render('home/addSentence', {
+      obj: db.getOne(req.params.id),
     });
   })
   .delete('/deleted/:id', (req, res) => {
