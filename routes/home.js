@@ -16,17 +16,45 @@ homeRouter.get('/', async (req, res) => {
   });
 }).get('/form/add', (req, res) => {
   res.render('home/add');
+}).get('/:id', (req, res) => {
+  res.render('home/one.hbs', {
+    obj: db.getOne(req.params.id),
+  });
+}).put('/:id', (req, res) => {
+  const { id } = req.params;
+  const update = db.update(req.params.id, req.body);
+  console.log(req.body);
+  console.log(update);
+  if (req.body.sentences !== '') {
+
+  }
+  res.render('home/modified.hbs', {
+    name: req.body.name,
+    update,
+    id,
+  });
 })
-  .post('/', (req, res) => {
+  .get('/edit/:id', (req, res) => {
+    res.render('home/edit.hbs', {
+      obj: db.getOne(req.params.id),
+    });
+  })
+  .post('/added', (req, res) => {
     const id = db.create(req.body);
     res.render('home/added', {
       id,
     });
-  }).delete('/deleted/:id', (req, res) => {
+  })
+  .post('/added/sentence', (req, res) => {
+    const id = db.addSentence(req.body);
+    res.render('home/added/sentence', {
+      id,
+    });
+  })
+  .delete('/deleted/:id', (req, res) => {
     db.delete(req.params.id);
     res.render('home/deleted');
   });
-
 module.exports = {
   homeRouter,
 };

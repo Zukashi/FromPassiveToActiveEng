@@ -1,0 +1,26 @@
+<div class="container">
+    <h2 class="gray-header">You are editing: {{obj.name}}</h2>
+    <p class="small">id: {{obj.id}}</p>
+    <form method="POST" action="/{{obj.id}}?_method=PUT">
+        <div class="form">
+            <label>
+                <p>
+                   word
+                </p>
+                <p>
+                    <input type="text" name="word" value="{{obj.word}}">
+                </p>
+            </label>
+            <label>
+                <p>
+                    Sentences
+                </p>
+                <p>
+                    <input type="text" name="sentences" value="{{obj.sentences}}">
+                </p>
+            </label>
+
+            <button type="submit" class="btn btn-success">Edytuj!</button>
+        </div>
+    </form>
+</div>

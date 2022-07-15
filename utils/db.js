@@ -52,17 +52,32 @@ class Db {
   }
 
   getOne(id) {
+    console.log(id);
     return this._data.find((oneObj) => oneObj.id === id); // zwróć obiekt , który będzie miał id takie jak szukamy
   }
 
   create(obj) {
     const id = uuid();
     this._data.push({
+      sentences: [],
       id,
       ...obj, // operator rozproszenia , tworzę obiekt i "rozpraszam" żeby móc dodać id
     }); // wpychamy dane do tablicy
     this._save();
     return id;
+  }
+
+  update(id, newObj) {
+    this._data = this._data.map((oneObj) => { // mapujemy obiekt czyli zmieniamy jeden w drugi jakby
+      if (oneObj.id === id) { // jeśli pojedynczy obiekt ma id równe id, którego szukamy
+        return { // zwracamy nowy obiekt w którym
+          ...oneObj, // zwracamy cały poprzedni obiekt
+          ...newObj, // a potem zwracam cały nowy obiekt
+        };
+      }
+      return oneObj; // zwracamy ten sam obiekt
+    });
+    this._save(); // na koniec zapisujemy plik
   }
 }
 

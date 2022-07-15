@@ -20,7 +20,8 @@
                 {{this.serial}}
                 {{this.word}}
             </th>
-
+           <td><a class="btn btn-outline-success btn-lg large-button" href="http://localhost:3000/edit/{{this.id}}">Edit</a></td>
+            <td> <a href="/{{this.id}}"><button class="btn">Details</button></a></td>
             <td class="links"><form method="POST" action="/deleted/{{this.id}}?_method=DELETE">  <button type="submit" class="btn">Delete</button> </form></td>
 
 
@@ -30,7 +31,7 @@
 
         </tr>
 
-    {{/each}}
+    {{/each}}e
 
 
     </tbody>
