@@ -1,5 +1,6 @@
 <div class="container">
     <h2></h2>
+
 </div>
 <div class="container one-customer">
     <table>
@@ -12,15 +13,21 @@
             </th>
 
         </tr>
-        <tr>
-           <th>
-               Sentence NR 1
-                {{obj.sentences}}
-            </th>
-        </tr>
+        {{#each obj.sentences}}
+            <tr>
+                <th>
+                    Sentence
+                    {{this}}
+                </th>
+            </tr>
+
+
+
+        {{/each}}
 
         </tbody>
     </table>
     <a class="btn btn-success btn-lg large-button" href="/">Return </a>
-    <a class="btn btn-outline-success btn-lg large-button" href="http://localhost:3000/edit/{{obj.id}}">Edytuj!</a>
+    <a class="btn btn-outline-success btn-lg large-button" href="http://localhost:3000/edit/{{obj.id}}">Edit</a>
+    <a class="btn btn-outline-success btn-lg large-button" href="http://localhost:3000/delete/AllSentences/{{obj.id}}">Delete Sentences</a>
 </div>

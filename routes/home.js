@@ -40,12 +40,19 @@ homeRouter.get('/', async (req, res) => {
       id,
     });
   })
+  .get('/delete/AllSentences/:id', (req, res) => {
+    const obj = db.getOne(req.params.id);
+    obj.sentences = [];
+    db._save();
+    res.render('home/deleted');
+  })
   .post('/added/sentence/:id', (req, res) => {
     const obj = db.getOne(req.params.id);
     obj.sentences.push(req.body.sentences);
     db._save();
-    res.render('home/added/sentence', {
+    res.render('home/one', {
       obj,
+      num: 0,
     });
   })
   .get('/form/addSentence/:id', (req, res) => {

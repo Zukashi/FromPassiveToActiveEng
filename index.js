@@ -2,6 +2,7 @@ const express = require('express');
 const { engine } = require('express-handlebars');
 const methodOverride = require('method-override');
 const { homeRouter } = require('./routes/home');
+const { handlebarsHelpers } = require('./utils/handlebars-helpers');
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use(express.json());
 
 app.engine('.hbs', engine({
   extname: '.hbs',
+  helpers: handlebarsHelpers,
 }));
 app.set('view engine', '.hbs');
 
