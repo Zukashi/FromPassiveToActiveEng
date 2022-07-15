@@ -104,3 +104,7 @@ th {
     align-items: center;
     justify-content: center;
 }
+
+.serial {
+    font-size: 30px;
+}

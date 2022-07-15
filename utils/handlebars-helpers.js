@@ -4,9 +4,7 @@ const handlebarsHelpers = {
 
     return num;
   },
-  saveNum: (num) => {
-    const n = 0;
-  },
+  checkLength: (arr) => arr.length,
 
 };
 

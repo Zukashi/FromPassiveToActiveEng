@@ -16,10 +16,12 @@
     <tbody>
     {{#each freshDb}}
         <tr>
+            <td class="serial">{{this.serial}}</td>
             <th>
-                {{this.serial}}
                 {{this.word}}
+
             </th>
+            <td> Num of Sentences {{checkLength this.sentences}}</td>
            <td><a class="btn btn-outline-success btn-lg large-button" href="http://localhost:3000/edit/{{this.id}}">Edit</a></td>
             <td> <a href="/{{this.id}}"><button class="btn">Details</button></a></td>
             <td class="links"><form method="POST" action="/deleted/{{this.id}}?_method=DELETE">  <button type="submit" class="btn">Delete</button> </form></td>
